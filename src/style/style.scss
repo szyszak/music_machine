@@ -1,3 +1,10 @@
+:root {
+  --blink-color: #207dd9;
+  --background-color: #000000;
+  --tile-color: #333333;
+  --active-color: #ffffff;
+}
+
 html,
 body {
   height: 100%;
@@ -8,7 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: var(--background-color);
 }
 
 button {
@@ -19,32 +26,21 @@ button {
 .app {
   display: grid;
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  gap: 4px;
 }
 
 .tile {
   width: 24px;
   height: 24px;
-  background-color: #333333;
-  border-radius: 3px;
+  background-color: var(--tile-color);
+  border: solid 3px var(--background-color);
   cursor: pointer;
 }
 
 .active {
-  background-color: #ffffff;
+  background-color: var(--active-color);
 }
 
 .blink {
-  animation-name: blink;
-  animation-duration: 1s;
-}
-
-@keyframes blink {
-  0% {
-    background-color: blue;
-  }
-
-  100% {
-    background-color: #ffffff;
-  }
+  transition: 0.2s linear;
+  background-color: var(--blink-color);
 }

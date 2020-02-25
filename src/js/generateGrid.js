@@ -1,4 +1,3 @@
-// cos sie zdaje byc nie tak z ta skala, trza jeszcze raz posluchac
 const pitches = [
   'a5',
   'f#5',
