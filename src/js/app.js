@@ -3,13 +3,12 @@ import Tone from 'tone';
 import generateGrid from './generateGrid';
 
 // set duration
-// 120 = 1s, 60 = 2s
 Tone.Transport.bpm.value = 60;
 
 // connect to output
 const poliSynth = new Tone.PolySynth(4, Tone.Synth).toMaster();
+
 const app = document.querySelector('.app');
-let isPlaying = false;
 
 const grid = generateGrid();
 
@@ -31,16 +30,21 @@ const startPlayback = () => {
   sequence.start(0);
 };
 
-grid.forEach(tile => {
-  tile.addEventListener('click', ev => {
-    if (!isPlaying) {
-      startPlayback();
-      isPlaying = true;
-    }
-    console.log(chords);
-    ev.target.classList.toggle('active');
-    const { pitch, pos } = ev.target.dataset;
-    console.log({ pitch, pos });
+const toggleSound = ev => {
+  const { pitch, pos } = ev.target.dataset;
+
+  if (chords[pos].includes(pitch)) {
+    ev.target.classList.remove('active');
+    chords[pos] = chords[pos].filter(item => item !== pitch);
+  } else {
+    ev.target.classList.add('active');
+    ev.target.classList.add('blink');
     chords[pos].push(pitch);
-  });
+  }
+};
+
+app.addEventListener('click', startPlayback, { once: true });
+
+grid.forEach(tile => {
+  tile.addEventListener('click', toggleSound);
 });

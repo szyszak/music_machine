@@ -8,7 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #333333;
+  background-color: #000000;
 }
 
 button {
@@ -19,17 +19,32 @@ button {
 .app {
   display: grid;
   grid-template: repeat(16, 1fr) / repeat(16, 1fr);
-  gap: 8px;
+  gap: 4px;
 }
 
 .tile {
-  width: 20px;
-  height: 20px;
-  background-color: lime;
-  border: solid 1px black;
+  width: 24px;
+  height: 24px;
+  background-color: #333333;
+  border-radius: 3px;
   cursor: pointer;
 }
 
 .active {
-  background-color: red;
+  background-color: #ffffff;
+}
+
+.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+}
+
+@keyframes blink {
+  0% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: #ffffff;
+  }
 }
