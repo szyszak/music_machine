@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --public-url /music_machine/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "",
+  "author": "Szyszak",
+  "homepage": "https://szyszak.github.io/music_machine/",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "gh-pages": "^2.2.0",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.25.0"
   },

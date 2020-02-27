@@ -4,4 +4,4 @@ Vanilla JS app created as a tribute to this Flash beauty [https://joemonster.org
 
 ## Live version:
 
-[https://music-machine.krzysztofszyszko.pl//](https://musiac-machine.krzysztofszyszko.pl/)
+[https://szyszak.github.io/music_machine/](https://szyszak.github.io/music_machine/)
