@@ -1,0 +1,48 @@
+:root {
+  --blink-color: #207dd9;
+  --background-color: #000000;
+  --tile-color: #333333;
+  --active-color: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+button {
+  margin-top: 16px;
+  padding: 20px;
+}
+
+.app {
+  display: grid;
+  grid-template: repeat(16, 1fr)/repeat(16, 1fr);
+}
+
+.tile {
+  width: 24px;
+  height: 24px;
+  background-color: var(--tile-color);
+  border: solid 3px var(--background-color);
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--active-color);
+}
+
+.blink {
+  transition: 0.2s linear;
+  background-color: var(--blink-color);
+}
+
+/*# sourceMappingURL=/style.e0c02e61.css.map */
